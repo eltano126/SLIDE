@@ -12,7 +12,8 @@ function mostrarXml(){ //Agregado para diferenciar las funciones
       {// code for IE6, IE5
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
-    xmlhttp.open("GET","https://dl.dropboxusercontent.com/u/26635239/ejemlpoCd.xml",false);
+    //xmlhttp.open("GET","https://dl.dropboxusercontent.com/u/26635239/ejemlpoCd.xml",false);
+    xmlhttp.open("GET","ftp://enzocris.slide.com.ar@ftp.slide.com.ar/XML/ehs_nuevo.xml",false);
     xmlhttp.send();
     xmlDoc=xmlhttp.responseXML; 
 
