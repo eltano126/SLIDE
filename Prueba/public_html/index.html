@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
+	<title>EHS - Login</title>
+        <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+        <script>
+            function valida_login(){
+                
+                var email=document.forms["login"]["email"].value;
+                var pass=document.forms["login"]["password"].value;
+                
+                if((email=="eltano126@gmail.com")&&(pass=="pass")){
+                    nuevaVentana=window.close("http://localhost:8383/EHS/index.html");
+                    nuevaVentana1=window.open("http://localhost:8383/EHS/form.html");
+                }else{
+                    nuevaVentana=window.close("http://localhost:8383/EHS/index.html");
+                    nuevaVentana1=window.open("http://localhost:8383/EHS/error.html");
+                }
+                
+                url=nuevaVentana1;
+                return url;
+                
+            }
+        </script>
     </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<body>
+    <section class="loginform cf">
+        <form id="form_login" name="login" >
+            <ul>
+                <li>
+                    <label for="usermail">Email</label>
+                    <input type="email" name="email" placeholder="yourname@email.com" required>
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="password" required></li>
+                <li>
+                    <!--<input type="submit" value="Login">-->
+                    <button onclick="valida_login()"></button>
+                </li>
+            </ul>
+        </form>
+    </section>
+</body>
 </html>

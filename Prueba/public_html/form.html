@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EHS - Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        
+        Fuente: http://www.web-desings.com/2012/08/01/formularios-html-y-lo-nuevo-en-html5.html
+        
+        <!--
+        <form>
+	    <p>Nombre:<input type="text" name="Nombre" /></p>
+	    <p>Apellido:<input type="text" name="Apellido" /></p>
+            <p>Contraseña: <input type="password" name="password"  /></p>
+	    <p><input type="submit" name="Enviar"></p>
+	</form>
+        -->
+        
+        /*****/
+        
+        <form action="actualizar.php" method="get">
+	    <p>Seleccione sus aficiones</p>
+	    <p><input type="checkbox" checked name="Internet" />Informática</p>
+	    <p><input type="checkbox" name="Leer"  />Video juegos</p>
+	    <p><input type="checkbox" name="Video juegos"  />Hacer Deportes</p>
+	</form>
+        
+        /*****/
+        
+        <!-- Obtener mi IP y mostrarla por pantalla -->
+        <script type="application/javascript">  
+            function getip(data){
+                document.write('La IP es ' + data.ip);
+            }
+        </script>
+        <script src="http://jsonip.appspot.com/?callback=getip" type="application/javascript">
+        </script>
+        <!-- -->
+        
+        /*****/
+        
+        <form action="actualizar.php" method="get">
+            
+	    <p>Seleccione sus Estado Civil</p>
+	    <p><input type="radio" checked name="eCivil" />Soltero</p>
+	    <p><input type="radio" name="eCivil"  />Casado</p>
+	    <p><input type="radio" name="eCivil"  />En una relación</p>
+	    <p><input type="radio" name="eCivil"  />Viudo(a)</p>
+	    <p><input type="submit" value="Enviar"></p>
+            
+	</form>
+
+        /*****/
+        
+        <form action="actualizar.php" method="get">
+	       
+	    <input type="submit" value="Envíar Datos" />
+	       
+	</form>
+        
+        /*****/
+        
+        <form action="actualizar.php" method="get">
+
+	    <input type="submit" value="Borrar Datos" />
+
+	</form>
+        
+        /*****/
+        
+        <form>
+
+            <a href="AdjuntarArchivo.html">Adjuntar Archivo</a>
+
+	</form>
+        
+        /*****/
+        
+        <form action="actualizar.php" method="post" id="form1">
+
+                <p>Elija el archivo que a enviar</p>
+                <p>
+                    <input type="file" name="Email" />
+                </p>
+                <p><input type="submit" value="Enviar"></p>
+        </form>
+        
+        /*****/
+        
+        <form action="" method="post" id="form1">
+	      <input type="date">
+	</form>
+
+        /*****/
+        
+    </body>
+</html>
