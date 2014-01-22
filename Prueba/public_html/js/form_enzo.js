@@ -48,3 +48,22 @@ function mostrarXml(){ //Agregado para diferenciar las funciones
     }
     document.write("</table>");
 }
+
+function desplegar(tabla_a_desplegar,estadoT, estadoTfila) {
+                var tablA = document.getElementById(tabla_a_desplegar);
+                var estadOt = document.getElementById(estadoT);
+                var fila = document.getElementById(estadoTfila);
+
+                switch(tablA.style.display) {
+                    case "none":
+                        tablA.style.display = "block";
+                        estadOt.innerHTML = "Ocultar";
+                        fila.innerHTML = "";
+                        fila.innerHTML = " La fila de id: "+fila.id+". Contiene: "+fila.innerHTML+" :: "+fila.style.background;
+                        break;
+                    default:
+                        tablA.style.display = "none";
+                        estadOt.innerHTML = "Mostrar"
+                        break;
+                }
+}
