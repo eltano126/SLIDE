@@ -22,27 +22,14 @@ function mostrarXml(){ //Agregado para diferenciar las funciones
     document.write("<tr><td>");
     document.write("ARTISTA");
     document.write("</td><td>");
-    document.write("COUNTRY");
-    document.write("</td><td>");
-    document.write("COMPANY");
-    document.write("</td><td>");
-    document.write("PRICE");
-    document.write("</td><td>");
-    document.write("YEAR");
+    document.write("DISCO");
     for (i=0;i<x.length;i++)
       { 
       document.write("<tr><td>");
       document.write(x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue);
       document.write("</td><td>");
       document.write(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
-      document.write("<td></td>");
-      document.write(x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue);
-      document.write("<td></td>");
-      document.write(x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue);
-      document.write("<td></td>");
-      document.write(x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue);
-      document.write("<td></td>");
-      document.write(x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue);
-    }
+      document.write("</td></tr>");
+      }
     document.write("</table>");
 }
