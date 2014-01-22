@@ -2,93 +2,12 @@
 <!-- FUENTE: http://www.taringa.net/posts/apuntes-y-monografias/8876902/Tabla-HTML-desplegable.html  -->
 <html>
     <head>
-        <title>Tabla Desplegable con botones</title>
-
-        <script type="teXt/javascript">
-            function desplegar(tabla_a_desplegar,estadoT, estadoTfila) {
-                var tablA = document.getElementById(tabla_a_desplegar);
-                var estadOt = document.getElementById(estadoT);
-                var fila = document.getElementById(estadoTfila);
-
-                switch(tablA.style.display) {
-                    case "none":
-                        tablA.style.display = "block";
-                        estadOt.innerHTML = "Ocultar";
-                        fila.innerHTML = "";
-                        fila.innerHTML = " La fila de id: "+fila.id+". Contiene: "+fila.innerHTML+" :: "+fila.style.background;
-                        break;
-                    default:
-                        tablA.style.display = "none";
-                        estadOt.innerHTML = "Mostrar"
-                        break;
-                }
-            }
-        </script>
-
-        <style type="text/css">
-            table{
-                border: 1px solid black;
-            }
-
-            td{
-                border: 1px solid red;
-            }
-
-            tr{
-                border: 1px solid yellow;
-            }
-        </style>
-
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="js/form_enzo.js"></script>
+        <title>Title</title>
     </head>
-
-    <body>
-        <table border="0" width="440">
-            <tr>
-                <td>Fila Padre 1</td>
-                <td><div align="center" id="estadoT" onClick="desplegar('tabla_a_desplegar','estadoT', 'estadoTfila')" style="background: #AEE756; cursor: pointer;">Mostrar</div></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <table id="tabla_a_desplegar" style="display:none;">
-                        <tr>
-                            <td id="estadoTfila" style=" background: #E9FAD0">Primera Tabla</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-        <table border="0" width="440">
-            <tr>
-                <td>Fila Padre 2</td>
-                    <td><div align="center" id="estadoT2" onClick="desplegar('tabla_a_desplegar2','estadoT2','estadoTfila2')" style="background: #AEE756; cursor: pointer;">Mostrar</div></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <table border="1" id="tabla_a_desplegar2" style="display: none;">
-                            <tr>
-                                <td id="estadoTfila2" style=" background: #E9FAD0">Esta es la segunda tabla</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-        </table>
-
-        <table border="0" width="440">
-            <tr>
-                <td>Fila Padre 3</td>
-                    <td><div align="center" id="estadoT3" onClick="desplegar('tabla_a_desplegar3','estadoT3', 'estadoTfila3')" style="background: #AEE756; cursor: pointer;">Mostrar</div></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <table border="1" id="tabla_a_desplegar3" style="display: none;">
-                       <tr>
-                            <td id="estadoTfila3" style=" background: #E9FAD0">Esta es la ultima tabla</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-    </body>
+<body>
+    <h1>Musica</h1>
+     <script>mostrarXmlDesplegable();</script>
+</body>
 </html> 
