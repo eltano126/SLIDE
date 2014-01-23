@@ -72,24 +72,36 @@ function desplegar(tabla_a_desplegar,estadoT, estadoTfila) {
 
 function mostrarXmlDesplegable(){//Agregado para diferenciar las funciones
     
-    if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
+    //Obtener el valor de un campo de un tag de XML (Fuente: http://www.w3schools.com/dom/dom_nodes_get.asp)
+    //x[i].getAttribute('category')
+    
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
       xmlhttp=new XMLHttpRequest();
-      }
-    else
-      {// code for IE6, IE5
+    }else{// code for IE6, IE5
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    xmlhttp.open("GET","https://dl.dropboxusercontent.com/u/26635239/musica.xml",false);
+    }
+    
+    xmlhttp.open("GET","https://dl.dropboxusercontent.com/u/26635239/musicaEnzo.xml",false);
     xmlhttp.send();
     xmlDoc=xmlhttp.responseXML; 
+    
     var x=xmlDoc.getElementsByTagName("GENERO");
-    //var x=xmlDoc.getElementsByTagName("ARTISTA"); tambien funciona!!
     
     for (i=0;i<x.length;i++){
+        
+        var numEstadoTabla = i + 1;
+        var nomGenero = x[i].getAttribute('name');
+        
+        var tdInicio = "<td><div align='center' id='estado";
+        var tdMedio = "' onClick='desplegar('tabla_a_desplegar','estado";
+        var tdMedio2 = "', 'estadoTfila')' style='background: #AEE756; cursor: pointer;'>";
+        var tdFin = "</div></td>";
+        
+        var tdConcatenado = tdInicio + numEstadoTabla + tdMedio + numEstadoTabla + tdMedio2 + nomGenero + tdFin;
+        
         document.write("<table border='0' width='440'>");
         document.write("<tr>");
-        document.write("<td><div align='center' id='estadoT' onClick='desplegar('tabla_a_desplegar','estadoT', 'estadoTfila')' style='background: #AEE756; cursor: pointer;'>Mostrar</div></td>");
+        document.write(tdConcatenado);
         document.write("</tr>");
         document.write("<tr>");
         document.write("<td colspan='2'>");
