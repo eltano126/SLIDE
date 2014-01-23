@@ -93,11 +93,12 @@ function mostrarXmlDesplegable(){//Agregado para diferenciar las funciones
         var nomGenero = x[i].getAttribute('name');
         
         var tdInicio = "<td><div align='center' id='estado";
-        var tdMedio = "' onClick='desplegar('tabla_a_desplegar','estado";
+        var tdMedio = "' onClick='desplegar('tabla_a_desplegar";
+        var tdMedio1 = "','estado";
         var tdMedio2 = "', 'estadoTfila')' style='background: #AEE756; cursor: pointer;'>";
         var tdFin = "</div></td>";
         
-        var tdConcatenado = tdInicio + numEstadoTabla + tdMedio + numEstadoTabla + tdMedio2 + nomGenero + tdFin;
+        var tdConcatenado = tdInicio + numEstadoTabla + tdMedio + numEstadoTabla + tdMedio1 + numEstadoTabla + tdMedio2 + nomGenero + tdFin;
         
         document.write("<table border='0' width='440'>");
         document.write("<tr>");
@@ -105,12 +106,41 @@ function mostrarXmlDesplegable(){//Agregado para diferenciar las funciones
         document.write("</tr>");
         document.write("<tr>");
         document.write("<td colspan='2'>");
+        
+        //ACA DEBERIA PONER EL OTRO NIVEL
+        //var y=xmlDoc.getElementsByTagName("ARTISTA");
+        var y = xmlDoc.getElementsByTagName("GENERO");
+        
+        for (i=0;i<x.length;i++){
+            alert(y[i].childNodes[0].nodeValue);
+            //document.write(y[i].childNodes[0].nodeValue);
+            //document.write("<br>");
+        }
+        
+        
+//            <table border="1" id="tabla_a_desplegar2" style="display: none;">
+//                <tr>
+//                    <td id="estadoTfila2" style=" background: #E9FAD0">Esta es la segunda tabla</td>
+//                </tr>
+//            </table>
+//            
+
         document.write("</td>");
         document.write("</tr>");
         document.write("</table>");
-        document.write("<table id='tabla_a_desplegar' style='display:none;'>");
+        
+        var tableInicio = "<table id='tabla_a_desplegar";
+        var tableFin = "' style='display:none;'>";
+        tableConcatenado = tableInicio + numEstadoTabla + tableFin;
+        
+        document.write(tableConcatenado);
         document.write("<tr>");
-        document.write("<td id='estadoTfila' style=' background: #E9FAD0'>Primera Tabla</td>");
+        
+        var tdSubTablaInicio = "<td id='estadoTfila";
+        var tdSubTablaFin = "' style=' background: #E9FAD0'>Primera Tabla</td>";
+        var SubConcat = tdSubTablaInicio + numEstadoTabla + tdSubTablaFin;
+        
+        document.write(SubConcat);
         document.write("</tr>");
         document.write("</table>");        
     }
