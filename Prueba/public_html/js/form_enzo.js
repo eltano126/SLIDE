@@ -13,7 +13,6 @@ function mostrarXml(){ //Agregado para diferenciar las funciones
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
     xmlhttp.open("GET","https://dl.dropboxusercontent.com/u/26635239/ejemlpoCd.xml",false);
-    //xmlhttp.open("GET","ftp://enzocris.slide.com.ar@ftp.slide.com.ar/XML/ehs_nuevo.xml",false);
     xmlhttp.send();
     xmlDoc=xmlhttp.responseXML; 
 
@@ -51,6 +50,8 @@ function mostrarXml(){ //Agregado para diferenciar las funciones
 
 function desplegar(tabla_a_desplegar,estadoT, estadoTfila) {
     
+    //https://dl.dropboxusercontent.com/u/26635239/musica.xml
+    
     var tablA = document.getElementById(tabla_a_desplegar);
     var estadOt = document.getElementById(estadoT);
     var fila = document.getElementById(estadoTfila);
@@ -64,7 +65,42 @@ function desplegar(tabla_a_desplegar,estadoT, estadoTfila) {
             break;
         default:
             tablA.style.display = "none";
-            estadOt.innerHTML = "Mostrar";
+            estadOt.innerHTML = "Mostrar"
             break;
+        }
+}
+
+function mostrarXmlDesplegable(){//Agregado para diferenciar las funciones
+    
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xmlhttp.open("GET","https://dl.dropboxusercontent.com/u/26635239/musica.xml",false);
+    xmlhttp.send();
+    xmlDoc=xmlhttp.responseXML; 
+    var x=xmlDoc.getElementsByTagName("GENERO");
+    //var x=xmlDoc.getElementsByTagName("ARTISTA"); tambien funciona!!
+    
+    for (i=0;i<x.length;i++){
+        document.write("<table border='0' width='440'>");
+        document.write("<tr>");
+        document.write("<td><div align='center' id='estadoT' onClick='desplegar('tabla_a_desplegar','estadoT', 'estadoTfila')' style='background: #AEE756; cursor: pointer;'>Mostrar</div></td>");
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<td colspan='2'>");
+        document.write("</td>");
+        document.write("</tr>");
+        document.write("</table>");
+        document.write("<table id='tabla_a_desplegar' style='display:none;'>");
+        document.write("<tr>");
+        document.write("<td id='estadoTfila' style=' background: #E9FAD0'>Primera Tabla</td>");
+        document.write("</tr>");
+        document.write("</table>");        
     }
+    
 }
